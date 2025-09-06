@@ -186,12 +186,12 @@ ul.comicNav a:hover, ul.comicNav a:focus {
 #comic table { margin: auto; }
 
 @font-face {
-  font-family: 'xkcd-Regular';
-  src: url('//xkcd.com/fonts/xkcd-Regular.eot?') format('eot'), url('//xkcd.com/fonts/xkcd-Regular.otf') format('opentype');
+  font-family: "xkcd-Regular";
+  src: url(fonts/xkcd-Regular.eot) format("eot"), url(fonts/xkcd-Regular.otf) format("opentype");
 }
 
 @font-face {
-    font-family: 'xkcd-Regular-v3';
-    src: url('https://xkcd.com/s/4fcbf3.woff') format('woff');
+    font-family: "xkcd-Regular-v3";
+    src: url(s/4fcbf3.woff) format("woff");
 }
 
