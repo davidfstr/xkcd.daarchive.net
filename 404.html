@@ -57,11 +57,25 @@
 }
 
 .cr-brand-header__logo {
-    width: 48px;
-    height: 48px;
     margin-right: 16px;
     flex-shrink: 0;
-    border-radius: 8px;
+}
+.cr-brand-header__logo,
+.cr-brand-header__logo--image,
+.cr-brand-header__logo--image_fallback {
+    width: 48px;
+    height: 48px;
+}
+
+/* Fallback to simplified inline image if full logo image not available */
+.cr-brand-header__logo--image_fallback {
+    display: none;
+}
+.cr-brand-header__logo--error .cr-brand-header__logo--image_fallback {
+    display: inline;
+}
+.cr-brand-header__logo--error .cr-brand-header__logo--image {
+    display: none;
 }
 
 .cr-brand-header__text {
@@ -85,6 +99,23 @@
     display: inline;
 }
 .cr-brand-header__title__logotext--dark {
+    display: none;
+}
+
+/* Fallback to regular text instead of logotext if logotext images not available */
+.cr-brand-header__logotext--text {
+    display: none;
+
+    /* NOTE: Duplicated by _BASE_FONT_SIZE and .cr-brand-header__logotext--text font-size */
+    font-size: 23px;
+    /* NOTE: Duplicated by _LIGHT_TEXT_COLOR and .cr-brand-header__logotext--text color */
+    color: #000;
+}
+.cr-brand-header__logotext--error .cr-brand-header__logotext--text {
+    display: inline;
+}
+.cr-brand-header__logotext--error .cr-brand-header__title__logotext--light,
+.cr-brand-header__logotext--error .cr-brand-header__title__logotext--dark {
     display: none;
 }
 
@@ -124,6 +155,11 @@
     }
     .cr-brand-header__title__logotext--dark {
         display: inline;
+    }
+
+    .cr-brand-header__logotext--text {
+        /* NOTE: Duplicated by _DARK_TEXT_COLOR and @media .cr-brand-header__logotext--text color */
+        color: #d8d8d8;
     }
 }
 
@@ -207,21 +243,31 @@
     <div class="cr-body__container">
         <div class="cr-brand-header">
             <a class="cr-brand-header__link" href="https://dafoster.net/projects/crystal-web-archiver/">
-                <img src="_/crystal/resources/appicon.png" alt="Crystal icon" class="cr-brand-header__logo" />
+                <span class="cr-brand-header__logo" />
+                    <img src="/_/crystal/resources/appicon.png" alt="Crystal icon" class="cr-brand-header__logo--image" onerror="document.querySelector('.cr-brand-header__logo').classList.add('cr-brand-header__logo--error');" />
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMTIuNUwyLjUgN0wyLjUgMTdMMTIgMjIuNUwyMS41IDE3TDIxLjUgN0wxMiAxMi41WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyKSIvPjxwYXRoIGQ9Ik0xMiAxMi41TDIuNSA3TDEyIDEuNUwyMS41IDdaIiBmaWxsPSIjODhEREZGIi8+PHBhdGggZD0iTTEyIDEuNUwyLjUgN1YxN0wxMiAyMi41TDIxLjUgMTdWN0wxMiAxLjVaIiBzdHJva2U9IiMwMEFBRkYiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHBhdGggZD0iTTIuNSA3TDEyIDEyLjVMMjEuNSA3IiBzdHJva2U9IiMwMEFBRkYiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHBhdGggZD0iTTEyIDEyLjVMMTIgMjIuNSIgc3Ryb2tlPSIjMDBBQUZGIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjEyIiB5MT0iNyIgeDI9IjEyIiB5Mj0iMjIuNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiM4OERERkYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMEFBRkYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4=" alt="Crystal icon" class="cr-brand-header__logo--image_fallback" />
+                </span>
                 <div class="cr-brand-header__text">
                     <h1 class="cr-brand-header__title">
-                        <img
-                            src="_/crystal/resources/logotext.png" 
-                            srcset="_/crystal/resources/logotext.png 1x, _/crystal/resources/logotext@2x.png 2x"
-                            alt="Crystal"
-                            class="cr-brand-header__title__logotext--light"
-                        />
-                        <img
-                            src="_/crystal/resources/logotext-dark.png" 
-                            srcset="_/crystal/resources/logotext-dark.png 1x, _/crystal/resources/logotext-dark@2x.png 2x"
-                            alt="Crystal"
-                            class="cr-brand-header__title__logotext--dark"
-                        />
+                        <span class="cr-brand-header__logotext" />
+                            <span class="cr-brand-header__logotext--text">
+                                Crystal
+                            </span>
+                            <img
+                                src="/_/crystal/resources/logotext.png" 
+                                srcset="/_/crystal/resources/logotext.png 1x, /_/crystal/resources/logotext@2x.png 2x"
+                                alt="Crystal"
+                                class="cr-brand-header__title__logotext--light"
+                                onerror="document.querySelector('.cr-brand-header__logotext').classList.add('cr-brand-header__logotext--error');"
+                            />
+                            <img
+                                src="/_/crystal/resources/logotext-dark.png" 
+                                srcset="/_/crystal/resources/logotext-dark.png 1x, /_/crystal/resources/logotext-dark@2x.png 2x"
+                                alt="Crystal"
+                                class="cr-brand-header__title__logotext--dark"
+                                onerror="document.querySelector('.cr-brand-header__logotext').classList.add('cr-brand-header__logotext--error');"
+                            />
+                        </span>
                     </h1>
                     <p class="cr-brand-header__subtitle">A Website Archiver</p>
                 </div>
