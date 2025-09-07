@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Not in Archive | Crystal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .cr-body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    box-sizing: border-box;
+    color: #333;
+    /* Always show vertical scrollbar to avoid layout shifts when page content changes height */
+    overflow-y: scroll;
+}
+
+.cr-body__container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.cr-brand-header {
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 30px;
+}
+
+.cr-brand-header__link {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+
+/* Dark mode styles for top of page */
+@media (prefers-color-scheme: dark) {
+    .cr-body {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d30 100%);
+        color: #e0e0e0;
+    }
+
+    .cr-body__container {
+        background: #2d2d30;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .cr-brand-header {
+        border-bottom: 2px solid #404040;
+    }
+}
+
+.cr-brand-header__logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+.cr-brand-header__text {
+    flex: 1;
+}
+
+.cr-brand-header__title {
+    margin: 0;
+    height: 32px;
+    line-height: 1;
+}
+
+.cr-brand-header__title img {
+    height: 32px;
+    width: auto;
+    vertical-align: baseline;
+}
+
+/* Default to light logotext */
+.cr-brand-header__title__logotext--light {
+    display: inline;
+}
+.cr-brand-header__title__logotext--dark {
+    display: none;
+}
+
+.cr-brand-header__subtitle {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+}
+
+.cr-page__icon {
+    font-size: 64px;
+    color: #e74c3c;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cr-page__title {
+    font-size: 18px;
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Dark mode styles for brand and content */
+@media (prefers-color-scheme: dark) {
+    .cr-brand-header__subtitle {
+        color: #a0a0a0;
+    }
+
+    .cr-page__title {
+        color: #e0e0e0;
+    }
+
+    /* Switch to dark logotext */
+    .cr-brand-header__title__logotext--light {
+        display: none;
+    }
+    .cr-brand-header__title__logotext--dark {
+        display: inline;
+    }
+}
+
+.cr-page__actions {
+    margin: 30px 0;
+}
+
+.cr-button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 8px 8px 8px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    min-width: 120px;
+    text-align: center;
+
+    /* Use consistent height to avoid variance in height from emoji characters */
+    height: 48px;
+    box-sizing: border-box;
+    line-height: 24px;
+}
+
+.cr-button--primary {
+    background: #4A90E2;
+    color: white;
+}
+
+.cr-button--primary:hover {
+    background: #357ABD;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.cr-button--primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.cr-button--primary:disabled:hover {
+    background: #4A90E2;
+    transform: none;
+    box-shadow: none;
+}
+
+.cr-button--secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.cr-button--secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.cr-button--secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.cr-button--secondary:disabled:hover {
+    background: #6c757d;
+    transform: none;
+    box-shadow: none;
+}
+
+
+    </style>
+</head>
+<body class="cr-body">
+    <div class="cr-body__container">
+        <div class="cr-brand-header">
+            <a class="cr-brand-header__link" href="https://dafoster.net/projects/crystal-web-archiver/">
+                <img src="/_/crystal/resources/appicon.png" alt="Crystal icon" class="cr-brand-header__logo" />
+                <div class="cr-brand-header__text">
+                    <h1 class="cr-brand-header__title">
+                        <img
+                            src="/_/crystal/resources/logotext.png" 
+                            srcset="/_/crystal/resources/logotext.png 1x, /_/crystal/resources/logotext@2x.png 2x"
+                            alt="Crystal"
+                            class="cr-brand-header__title__logotext--light"
+                        />
+                        <img
+                            src="/_/crystal/resources/logotext-dark.png" 
+                            srcset="/_/crystal/resources/logotext-dark.png 1x, /_/crystal/resources/logotext-dark@2x.png 2x"
+                            alt="Crystal"
+                            class="cr-brand-header__title__logotext--dark"
+                        />
+                    </h1>
+                    <p class="cr-brand-header__subtitle">A Website Archiver</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="cr-page__icon">🚫</div>
+
+<div class="cr-page__title">
+    <strong>Page Not in Archive</strong>
+</div>
+
+<p>The requested page was not found in this archive.</p>
+
+
+
+
+
+
+<div class="cr-page__actions">
+    <button onclick="history.back()" class="cr-button cr-button--secondary">
+        ← Go Back
+    </button>
+
+</div>
+    </div>
+
+    
+</body>
+</html>
