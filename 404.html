@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Not in Archive | Crystal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .cr-body {
+        <html>
+        <head>
+            <meta charset="utf-8" />
+            <title>Not in Archive</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                .cr-body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
@@ -131,6 +131,9 @@
     text-align: center;
     margin: 20px 0;
 }
+.cr-page__icon:first-child {
+    margin-top: 0;
+}
 
 .cr-page__title {
     font-size: 18px;
@@ -236,65 +239,207 @@
     box-shadow: none;
 }
 
+.cr-url-box {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #4A90E2;
+    margin: 20px 0;
+}
 
-    </style>
-</head>
-<body class="cr-body">
-    <div class="cr-body__container">
-        <div class="cr-brand-header">
-            <a class="cr-brand-header__link" href="https://dafoster.net/projects/crystal-web-archiver/" target="_blank">
-                <span class="cr-brand-header__logo" />
-                    <img src="/_/crystal/resources/appicon.png" alt="Crystal icon" class="cr-brand-header__logo--image" onerror="document.querySelector('.cr-brand-header__logo').classList.add('cr-brand-header__logo--error');" />
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMTIuNUwyLjUgN0wyLjUgMTdMMTIgMjIuNUwyMS41IDE3TDIxLjUgN0wxMiAxMi41WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyKSIvPjxwYXRoIGQ9Ik0xMiAxMi41TDIuNSA3TDEyIDEuNUwyMS41IDdaIiBmaWxsPSIjODhEREZGIi8+PHBhdGggZD0iTTEyIDEuNUwyLjUgN1YxN0wxMiAyMi41TDIxLjUgMTdWN0wxMiAxLjVaIiBzdHJva2U9IiMwMEFBRkYiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHBhdGggZD0iTTIuNSA3TDEyIDEyLjVMMjEuNSA3IiBzdHJva2U9IiMwMEFBRkYiIHN0cm9rZS13aWR0aD0iMC41Ii8+PHBhdGggZD0iTTEyIDEyLjVMMTIgMjIuNSIgc3Ryb2tlPSIjMDBBQUZGIiBzdHJva2Utd2lkdGg9IjAuNSIvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjEyIiB5MT0iNyIgeDI9IjEyIiB5Mj0iMjIuNSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIHN0b3AtY29sb3I9IiM4OERERkYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMEFBRkYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48L3N2Zz4=" alt="Crystal icon" class="cr-brand-header__logo--image_fallback" />
-                </span>
-                <div class="cr-brand-header__text">
-                    <h1 class="cr-brand-header__title">
-                        <span class="cr-brand-header__logotext" />
-                            <span class="cr-brand-header__logotext--text">
-                                Crystal
-                            </span>
-                            <img
-                                src="/_/crystal/resources/logotext.png" 
-                                srcset="/_/crystal/resources/logotext.png 1x, /_/crystal/resources/logotext@2x.png 2x"
-                                alt="Crystal"
-                                class="cr-brand-header__title__logotext--light"
-                                onerror="document.querySelector('.cr-brand-header__logotext').classList.add('cr-brand-header__logotext--error');"
-                            />
-                            <img
-                                src="/_/crystal/resources/logotext-dark.png" 
-                                srcset="/_/crystal/resources/logotext-dark.png 1x, /_/crystal/resources/logotext-dark@2x.png 2x"
-                                alt="Crystal"
-                                class="cr-brand-header__title__logotext--dark"
-                                onerror="document.querySelector('.cr-brand-header__logotext').classList.add('cr-brand-header__logotext--error');"
-                            />
-                        </span>
-                    </h1>
-                    <p class="cr-brand-header__subtitle">A Website Archiver</p>
-                </div>
-            </a>
+.cr-url-box__label {
+    font-size: 12px;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.cr-url-box__link {
+    text-decoration: none;
+    word-break: break-all;
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-size: 14px;
+}
+.cr-url-box__link[href] {
+    color: #4A90E2;
+}
+.cr-url-box__link[href]:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode styles for URL */
+@media (prefers-color-scheme: dark) {
+    .cr-url-box {
+        background: #404040;
+        border-left: 4px solid #6BB6FF;
+    }
+
+    .cr-url-box__label {
+        color: #a0a0a0;
+    }
+
+    .cr-url-box__link {
+        color: #6BB6FF;
+    }
+}
+
+            </style>
+        </head>
+        <body class="cr-body">
+            <div class="cr-body__container">
+
+
+                <div class="cr-page__icon">🚫</div>
+
+        <div class="cr-page__title">
+            <strong>Page Not in Archive</strong>
         </div>
 
-        <div class="cr-page__icon">🚫</div>
+        <p>The requested page was not found in this archive.</p>
 
-<div class="cr-page__title">
-    <strong>Page Not in Archive</strong>
+        <div class="cr-url-box">
+    <div class="cr-url-box__label">Original URL</div>
+    <a class="cr-url-box__link" target="_blank" rel="noopener">
+        See browser's URL
+    </a>
 </div>
 
-<p>The requested page was not found in this archive.</p>
+        <div class="cr-page__actions">
+            <button onclick="history.back()" class="cr-button cr-button--secondary">
+                ← Go Back
+            </button>
+        </div>
+            </div>
 
+            <script>
+    const crDefaultUrlPrefixB64 = "aHR0cHM6Ly94a2NkLmNvbQ==";
 
+    // -----------------------------------------------------------------
+    // URL Box
 
+    // Calculate the original archive URL based on the request URL
+    document.addEventListener('DOMContentLoaded', async () => {
+        const loc = document.location;
+        if (loc.pathname.endsWith('/404.html')) {
+            // 404 page loaded directly. No original URL exists.
+            // Leave fallback messaging in place.
+            return;
+        }
 
+        const requestPath = loc.pathname + loc.search;
+        const siteRootPath = await locateSiteRootPath(loc.origin, requestPath);
+        const siteRelRequestPath = requestPath.substring(siteRootPath.length - 1);
 
+        const crDefaultUrlPrefix = (crDefaultUrlPrefixB64 !== null)
+            ? tryDecodeBase64Utf8(crDefaultUrlPrefixB64)
+            : null;
+        const archiveUrl = getArchiveUrlWithDup(siteRelRequestPath, crDefaultUrlPrefix);
+        if (archiveUrl === null) {
+            // Unable to resolve archive URL.
+            // Leave fallback messaging in place.
+            return;
+        }
 
-<div class="cr-page__actions">
-    <button onclick="history.back()" class="cr-button cr-button--secondary">
-        ← Go Back
-    </button>
+        // Display the original archive URL
+        const urlBoxLinkDom = document.querySelector('.cr-url-box__link');
+        urlBoxLinkDom.href = archiveUrl;
+        urlBoxLinkDom.innerText = archiveUrl;
+    });
 
-</div>
-    </div>
+    function tryDecodeBase64Utf8(b64Str) {
+        try {
+            const bytes = Uint8Array.fromBase64(base64);
+            return new TextDecoder('utf-8').decode(bytes, {fatal: true});
+        } catch (e) {
+            if (e instanceof SyntaxError || e instanceof TypeError) {
+                // Invalid base64 or UTF-8
+                return null;
+            } else {
+                // API unavailable: Uint8Array, TextDecoder
+                try {
+                    return atob(b64Str);
+                } catch (f) {
+                    if (f instanceof InvalidCharacterError) {
+                        // Invalid base64 or string is not ASCII.
+                        return null;
+                    } else {
+                        throw f;
+                    }
+                }
+            }
+        }
+    }
 
-    
-</body>
-</html>
+    // Locates the path to the directory containing the exported site,
+    // which also will directly contain the "404.html" page.
+    async function locateSiteRootPath(origin, pathWithinSiteRoot) {
+        let pathSegments = pathWithinSiteRoot.split('/').slice(1);
+        pathSegments = pathSegments.slice(0, pathSegments.length - 1);
+
+        // Check each directory level, starting from root, leading up to pathWithinSiteRoot.
+        // Look for a "404.html" page matching this 404 page.
+        for (let i = 0; i <= pathSegments.length; i++) {
+            const candidateDir = '/' + pathSegments.slice(0, i).join('/') + (i > 0 ? '/' : '');
+            const candidate404Url = origin + candidateDir + '404.html';
+
+            let content;
+            try {
+                const response = await fetch(candidate404Url);
+                content = await response.text();
+            } catch (fetchError) {
+                // No 404.html page found here
+                continue;
+            }
+
+            const match = content.match(/const crDefaultUrlPrefixB64 = ([^;]+);/);
+            if (!match) {
+                // No Crystal 404.html page found here
+                continue;
+            }
+
+            let candidateUrlPrefixB64;
+            try {
+                candidateUrlPrefixB64 = JSON.parse(match[1]);
+            } catch (parseError) {
+                // Looks like a Crystal 404.html page, but has a bogus crDefaultUrlPrefixB64.
+                continue;
+            }
+            if (candidateUrlPrefixB64 !== crDefaultUrlPrefixB64) {
+                // Is a Crystal 404.html page but does not match this 404 page.
+                continue
+            }
+
+            return candidateDir;
+        }
+
+        // Fallback to root if no matching Crystal 404 page was found
+        return '/';
+    }
+
+    // NOTE: Duplicated in get_archive_url_with_dup() and getArchiveUrlWithDup()
+    function getArchiveUrlWithDup(requestPath, defaultUrlPrefix) {
+        const match = requestPath.match(/^\/_\/([^\/]+)\/(.+)$/);
+        if (match) {
+            const scheme = match[1];
+            const rest = match[2];
+            const archiveUrl = scheme + '://' + rest;
+            return archiveUrl;
+        } else {
+            // If valid default URL prefix is set, use it
+            if (defaultUrlPrefix !== null && !defaultUrlPrefix.endsWith('/')) {
+                if (!requestPath.startsWith('/')) {
+                    throw new Error('Expected path to start with /');
+                }
+                return defaultUrlPrefix + requestPath;
+            } else {
+                return null;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------
+</script>
+        </body>
+        </html>
